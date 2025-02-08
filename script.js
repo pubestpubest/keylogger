@@ -13,21 +13,21 @@ function log(key) {
     const span3 = document.createElement('span');
     
     if(swapper) {
-        span.style.backgroundColor = 'black';
+        span.style.backgroundColor = 'gray';
         span.style.color = 'white';
-        span2.style.backgroundColor = 'black';
+        span2.style.backgroundColor = 'gray';
         span2.style.color = 'white';
-        span3.style.backgroundColor = 'black';
+        span3.style.backgroundColor = 'gray';
         span3.style.color = 'white';
         swapper = false;
     }
     else {
         span.style.backgroundColor = 'white';
-        span.style.color = 'black';
+        span.style.color = 'gray';
         span2.style.backgroundColor = 'white';
-        span2.style.color = 'black';
+        span2.style.color = 'gray';
         span3.style.backgroundColor = 'white';
-        span3.style.color = 'black';
+        span3.style.color = 'gray';
         swapper = true;
     }
     // nkey.innerText += logMessage;
