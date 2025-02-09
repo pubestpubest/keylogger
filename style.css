@@ -63,3 +63,7 @@ p {
 .keyboard .row .shift{
     width: 10em;
 }
+.key{
+    cursor: pointer;
+    transition: background-color 0.3s;
+}

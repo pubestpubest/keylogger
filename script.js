@@ -7,7 +7,8 @@ const key = document.querySelectorAll('.key');
 
 let swapper = false;
 
-function log(key) {
+function log(event) {
+    const key = event.key;
     const logMessage = `${key}`;
     const span = document.createElement('span');
     const span2 = document.createElement('span');
@@ -31,16 +32,14 @@ function log(key) {
         span3.style.color = 'gray';
         swapper = true;
     }
-    // nkey.innerText += logMessage;
     span.textContent = logMessage;
     nkey.appendChild(span);
-    span2.textContent = `0x`+hex(logMessage);
+    span2.textContent = `0x` + hex(logMessage);
     hexkey.appendChild(span2);
     span3.textContent = bin(logMessage);
     binkey.appendChild(span3);
 
     logdiv.scrollTop = logdiv.scrollHeight;
-    
 }
 
 //function to take a key and return it in hexadecimal
@@ -76,10 +75,21 @@ function releaseKey(event) {
     });
 }
 document.addEventListener('keydown', (event) => {
-    let key = event.key;
-    log(key);
+    log(event);
     traceKey(event);
 });
 
 clear.addEventListener('click', clearLog);
 document.addEventListener('keyup',releaseKey);
+key.forEach((key) => {
+    key.addEventListener('click', () => {
+        const keyCode = key.dataset.keyCode;
+        const keyValue = key.textContent.trim();
+        const keydownEvent = new KeyboardEvent('keydown', { key: keyValue, keyCode: keyCode, which: keyCode });
+        const keyupEvent = new KeyboardEvent('keyup', { key: keyValue, keyCode: keyCode, which: keyCode });
+        document.dispatchEvent(keydownEvent);
+        setTimeout(() => {
+            document.dispatchEvent(keyupEvent);
+        }, 100);
+    });
+});
