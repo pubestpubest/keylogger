@@ -29,3 +29,37 @@ p {
 #binkey2 {
     background-color: cornsilk;
 }
+
+#kb{
+    margin-top: 20px;
+}
+
+.row, .keyboard .row div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.keyboard .row:nth-child(1) .key:nth-child(1){
+    margin-left: 3.5em;
+}
+.keyboard .row div {
+    border: 2px solid #ccc;
+    color: #333;
+    width: 4em;
+    height: 4em;
+    margin: 0.2em;
+    transform: skew(-8deg);
+    font-size: 1em;
+}
+
+.keyboard .row .space{
+    width: 30em;
+}
+
+.keyboard .row .tab, .keyboard .row .capslock, .keyboard .row .enter, .keyboard .row .backspace{
+    width: 6em;
+}
+.keyboard .row .shift{
+    width: 10em;
+}

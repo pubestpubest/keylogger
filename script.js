@@ -1,8 +1,9 @@
 const logdiv = document.getElementById('log');
-const nkey = document.getElementById('key');
+const nkey = document.getElementById('keyc');
 const hexkey = document.getElementById('hexkey');
 const binkey = document.getElementById('binkey');
 const clear = document.getElementById('clear');
+const key = document.querySelectorAll('.key');
 
 let swapper = false;
 
@@ -59,9 +60,26 @@ function clearLog() {
     binkey.textContent = '';
 }
 
+function traceKey(event) {
+    key.forEach((key) => {
+        if(key.dataset.keyCode == event.keyCode) {
+            key.style.background = 'rgba(0, 0, 0, 0.1)';
+        }
+    });
+}
+
+function releaseKey(event) {
+    key.forEach((key) => {
+        if(key.dataset.keyCode == event.keyCode) {
+            key.style.background = 'transparent';
+        }
+    });
+}
 document.addEventListener('keydown', (event) => {
     let key = event.key;
     log(key);
+    traceKey(event);
 });
 
 clear.addEventListener('click', clearLog);
+document.addEventListener('keyup',releaseKey);

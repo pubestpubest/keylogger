@@ -8,14 +8,98 @@
 </head>
 <body>
     <h1>Simulated Global Keylogger Demonstrate</h1>
+    <strong>This is not HID demonstration</strong>
     <p>Type anywhere on the page, and we will pretend to send each keystroke to the server (it will be displayed here).</p>
     <p>Start typing anywhere on this page...</p>
     <div id="log">
-        <strong>Captured keystroke: </strong> <span id="key"></span>
+        <strong>Captured keystroke: </strong> <span id="keyc"></span>
         <br><strong>Hexadecimal: </strong><span id="hexkey"></span>
         <br><strong>Binary: </strong><span id="binkey"></span>
     </div>
     <button id="clear">Clear</button>
+    
+    <div class="keyboard" id="kb">
+        <!-- Row 1: Number Row -->
+        <div class="row">
+          <div class="key" data-key-code="192">~</div>
+          <div class="key" data-key-code="49">1</div>
+          <div class="key" data-key-code="50">2</div>
+          <div class="key" data-key-code="51">3</div>
+          <div class="key" data-key-code="52">4</div>
+          <div class="key" data-key-code="53">5</div>
+          <div class="key" data-key-code="54">6</div>
+          <div class="key" data-key-code="55">7</div>
+          <div class="key" data-key-code="56">8</div>
+          <div class="key" data-key-code="57">9</div>
+          <div class="key" data-key-code="48">0</div>
+          <div class="key" data-key-code="189">-</div>
+          <div class="key" data-key-code="187">=</div>
+          <div class="key backspace" data-key-code="8">BACKSPACE</div>
+        </div>
+      
+        <!-- Row 2: Q-P Row -->
+        <div class="row">
+          <div class="key tab" data-key-code="9">TAB</div>
+          <div class="key" data-key-code="81">Q</div>
+          <div class="key" data-key-code="87">W</div>
+          <div class="key" data-key-code="69">E</div>
+          <div class="key" data-key-code="82">R</div>
+          <div class="key" data-key-code="84">T</div>
+          <div class="key" data-key-code="89">Y</div>
+          <div class="key" data-key-code="85">U</div>
+          <div class="key" data-key-code="73">I</div>
+          <div class="key" data-key-code="79">O</div>
+          <div class="key" data-key-code="80">P</div>
+          <div class="key" data-key-code="219">[</div>
+          <div class="key" data-key-code="221">]</div>
+          <div class="key" data-key-code="220">\</div>
+        </div>
+      
+        <!-- Row 3: A-L Row -->
+        <div class="row">
+          <div class="key capslock" data-key-code="20">CAPS</div>
+          <div class="key" data-key-code="65">A</div>
+          <div class="key" data-key-code="83">S</div>
+          <div class="key" data-key-code="68">D</div>
+          <div class="key" data-key-code="70">F</div>
+          <div class="key" data-key-code="71">G</div>
+          <div class="key" data-key-code="72">H</div>
+          <div class="key" data-key-code="74">J</div>
+          <div class="key" data-key-code="75">K</div>
+          <div class="key" data-key-code="76">L</div>
+          <div class="key" data-key-code="186">;</div>
+          <div class="key" data-key-code="222">'</div>
+          <div class="key enter" data-key-code="13">ENTER</div>
+        </div>
+      
+        <!-- Row 4: Z-M Row -->
+        <div class="row">
+          <div class="key shift" data-key-code="16">SHIFT</div>
+          <div class="key" data-key-code="90">Z</div>
+          <div class="key" data-key-code="88">X</div>
+          <div class="key" data-key-code="67">C</div>
+          <div class="key" data-key-code="86">V</div>
+          <div class="key" data-key-code="66">B</div>
+          <div class="key" data-key-code="78">N</div>
+          <div class="key" data-key-code="77">M</div>
+          <div class="key" data-key-code="188">,</div>
+          <div class="key" data-key-code="190">.</div>
+          <div class="key" data-key-code="191">/</div>
+          <div class="key shift" data-key-code="16">SHIFT</div>
+        </div>
+      
+        <!-- Row 5: Bottom Row -->
+        <div class="row">
+          <div class="key ctrl" data-key-code="17">CTRL</div>
+          <div class="key win" data-key-code="91">WIN</div>
+          <div class="key alt" data-key-code="18">ALT</div>
+          <div class="key space" data-key-code="32">SPACE</div>
+          <div class="key alt" data-key-code="18">ALT</div>
+          <div class="key fn" data-key-code="0">FN</div>
+          <div class="key menu" data-key-code="93">MENU</div>
+          <div class="key ctrl" data-key-code="17">CTRL</div>
+        </div>
+      </div>
     <script src="script.js"></script>
 </body>
 </html>
